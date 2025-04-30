@@ -1,7 +1,10 @@
 package com.polarbookshop.catalogservice.domain;
 
 import java.util.Optional;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+@Service
 public class BookService {
 
     private final BookRepository bookRepository;
@@ -26,6 +29,7 @@ public class BookService {
         return bookRepository.save(book);
     }
 
+    @Transactional
     public void removeBookFromCatalog(String isbn) {
         bookRepository.deleteByIsbn(isbn);
     }
