@@ -27,7 +27,7 @@ public class BookService {
     }
 
     public void removeBookFromCatalog(String isbn) {
-        bookRepository.deleteByIsbn();
+        bookRepository.deleteByIsbn(isbn);
     }
 
     public Book editBookDetails(String isbn, Book book) {
